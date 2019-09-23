@@ -1,6 +1,7 @@
 const workspace = window.location.search.split("=")[1];
+const host = window.location.host;
 
-const socket = io(`http://localhost:3000?workspace=${workspace}`);
+const socket = io(`${host}?workspace=${workspace}`);
 
 // const socket = io('http://localhost:3000?token=abc')
 

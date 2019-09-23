@@ -6,7 +6,6 @@ const socketIO = require("socket.io");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-const ip = require("ip");
 
 const app = express();
 const server = http.createServer(app);
@@ -26,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", function(req, res, next) {
-  res.render("index", { title: "Express", address: ip.address() });
+  res.render("index", { title: "Express", address: req.headers.host });
 });
 
 app.post("/", function(req, res, next) {
