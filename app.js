@@ -1,10 +1,12 @@
 const createError = require("http-errors");
+const cors = require("cors");
 const express = require("express");
 const http = require("http");
 const socketIO = require("socket.io");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const ip = require("ip");
 
 const app = express();
 const server = http.createServer(app);
@@ -16,6 +18,7 @@ app.io = io;
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,7 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", function(req, res, next) {
-  res.render("index", { title: "Express" });
+  res.render("index", { title: "Express", address: ip.address() });
 });
 
 app.post("/", function(req, res, next) {
