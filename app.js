@@ -25,12 +25,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', address: req.headers.host });
+  res.render('index', { title: 'Pision', address: req.headers.host });
 });
 
 app.post('/', function(req, res, next) {
   // とりあえず仮のSlackからのPostデータ
-  // { text: string, user: { id: string } } とする
   const { user_id, text } = req.body;
   console.log(`message: ${text}, from ${user_id}`);
 
