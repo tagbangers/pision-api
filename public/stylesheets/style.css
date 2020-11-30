@@ -2,8 +2,46 @@ html,
 body {
   height: 100%;
 }
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+}
+
+.brand-font {
+  font-family: "Pacifico", cursive;
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro .emoji {
+  font-size: 5rem;
+  margin: 0;
+}
+
+.intro h1 {
+  font-weight: normal;
+}
+
+.intro .badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badges img {
+  margin: 1rem 2rem;
+}
+
+.badges img.google-play {
+  width: 180px;
+}
+
+.badges img.app-store {
+  width: 128px;
 }
