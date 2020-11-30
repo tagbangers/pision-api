@@ -25,8 +25,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", function (req, res, next) {
-  console.log(req.query);
-
   if (req.query.error) {
     res.render("auth-error", { title: "Pision", error: req.query.error });
     return;
