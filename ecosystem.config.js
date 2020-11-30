@@ -22,7 +22,7 @@ module.exports = {
   deploy: {
     production: {
       user: "ec2-user",
-      host: "ec2-3-113-22-35.ap-northeast-1.compute.amazonaws.com",
+      host: "ec2-18-176-239-9.ap-northeast-1.compute.amazonaws.com",
       key: "~/.ssh/pision-tagbangers.pem",
       ref: "origin/master",
       repo: "git@github.com:tagbangers/pision-api.git",
